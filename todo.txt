@@ -1,0 +1,75 @@
+Statistics:
+  -Checkout Line: #
+    -Total Customers Helped: ____ customers
+    -Total Number of Items: ____ items
+    -Max Line Length: ____ customers in line
+    -Total Idle Time: ____ minutes or hours? //probably minutes -Luis
+    -Total Over Time: ---- minutes or hours?
+
+
+Dealing with checkout:
+  im thinking after adding customers for each minute:
+  1. check if the top customer (Shopping.peek()) is done 
+     shopping (== minutes)
+        > if so, delete the customer from the list and add 
+          to first checkout lane
+        > when added they get a leave time which is the 
+          current minute + (items * .15) << what is .15?
+            > each lane could have a total queue time that 
+              gets incrimented when a customer is added to 
+              a lane (items * .15)
+  2. check if anyone in check lanes leave time equal 
+     minutes
+        > if so, remove from checkout lane
+        > maybe add stats for output
+  3. sort vector of checkout lanes by queue time so that 
+     the lane with the least queue time is what the next 
+     customer is added to
+  
+  While linked list not empty as outside loop? and for 
+  loop for each minute?
+
+
+
+/*
+// Assume this is your Queue with items
+  //int peopleinline = 0;
+
+  // Start from the head of the Queue
+ // currentNode = checkoutLanes[i]->getheadpointer();
+
+  // Loop until you reach the end of the Queue
+  //while (currentNode != nullptr) {
+    // Access the data in the current node
+    // Check for idle time and update total idle time
+    //if (customer.enterQTime > minutes)
+      // totalidletime += customer.enterQTime - minutes;
+
+      //peopleinline += 1;
+
+    // increments the items in line for each person that passes through the
+    // line
+    // itemsinline += currentNode->data.itemCount;
+
+    // checks to see if how long the line is - This needs some work
+    // maxline = peopleinline;
+
+    // adds up the number of minutes that the line is empty - This needs some
+    // work
+
+    // calculate the total time that the line is overtime - |total time the
+    // line operated that day (minus) 720/12hrs| = overtime - How do we allow
+    // this loop access to totaltime?
+
+    /*
+    if(720 - totaltime >= 0) {
+      totalovertime = totaltime - 720;
+    }
+    else{
+      totalovertime = -1 * (totaltime - 720);
+    }
+    */
+
+    // Move to the next node
+    //currentNode = currentNode->nextPtr;
+    */
